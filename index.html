@@ -13,19 +13,17 @@
       <div class="layout">
 
         <!-- LEFT: Kikobabisko logo -->
-        <div class="brand" style="padding:40px 20px; text-align:center;">
-          
+        <div class="brand" style="padding:clamp(18px, 4vw, 40px) 20px; text-align:center;">
           <img 
             class="brand-logo" 
             src="assets/kikobabisko.png" 
             alt="Kikobabisko music projects"
-            style="max-width:340px; width:100%; height:auto;"
+            style="width:100%; height:auto; max-width:340px;"
           />
-
         </div>
 
         <!-- RIGHT: 4 clickable artists -->
-        <div class="list" style="padding:28px 20px 36px;">
+        <div class="list" style="padding:clamp(16px, 3.5vw, 28px) 20px 36px;">
 
           <a class="item" href="cedric-kivits.html">
             <div class="logo circle">
@@ -89,6 +87,17 @@
         </div>
       </div>
     </section>
+
+    <!-- Mobile-only override (logo smaller) -->
+    <style>
+      @media (max-width: 520px) {
+        .brand-logo { max-width: 240px !important; }
+      }
+      @media (max-width: 420px) {
+        .brand-logo { max-width: 210px !important; }
+      }
+    </style>
+
   </main>
 </body>
 </html>
