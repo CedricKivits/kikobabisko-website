@@ -12,18 +12,17 @@
     <section class="card">
       <div class="layout">
 
-        <!-- LEFT: Kikobabisko logo -->
-        <div class="brand" style="padding:clamp(18px, 4vw, 40px) 20px; text-align:center;">
+        <!-- BRAND -->
+        <div class="brand">
           <img 
             class="brand-logo" 
             src="assets/kikobabisko.png" 
             alt="Kikobabisko music projects"
-            style="width:100%; height:auto; max-width:340px;"
           />
         </div>
 
-        <!-- RIGHT: 4 clickable artists -->
-        <div class="list" style="padding:clamp(16px, 3.5vw, 28px) 20px 36px;">
+        <!-- ARTISTS -->
+        <div class="list">
 
           <a class="item" href="cedric-kivits.html">
             <div class="logo circle">
@@ -33,7 +32,7 @@
               <div class="name">Cedric Kivits</div>
               <div class="role">Songwriter</div>
             </div>
-            <div class="chev" aria-hidden="true" style="opacity:.6;">›</div>
+            <div class="chev">›</div>
           </a>
 
           <a class="item" href="ceddy-keyz.html">
@@ -44,7 +43,7 @@
               <div class="name">Ceddy Keyz</div>
               <div class="role">Jazz piano &amp; Covers</div>
             </div>
-            <div class="chev" aria-hidden="true" style="opacity:.6;">›</div>
+            <div class="chev">›</div>
           </a>
 
           <a class="item" href="stivik-cirdec.html">
@@ -55,7 +54,7 @@
               <div class="name">Stivik Cirdec</div>
               <div class="role">Music for games and movies</div>
             </div>
-            <div class="chev" aria-hidden="true" style="opacity:.6;">›</div>
+            <div class="chev">›</div>
           </a>
 
           <a class="item" href="dcporiginal.html">
@@ -66,18 +65,18 @@
               <div class="name">DCPOriginal</div>
               <div class="role">Beats</div>
             </div>
-            <div class="chev" aria-hidden="true" style="opacity:.6;">›</div>
+            <div class="chev">›</div>
           </a>
 
-          <div class="footerline" style="margin:18px 0;"></div>
+          <div class="footerline"></div>
 
-          <div class="contact" style="margin-top:10px;">
+          <div class="contact">
             <div class="contact-row">
-              <span class="icon" aria-hidden="true">✉️</span>
+              <span class="icon">✉️</span>
               <a href="mailto:kikobabisko@gmail.com">kikobabisko@gmail.com</a>
             </div>
             <div class="contact-row">
-              <span class="icon" aria-hidden="true">IG</span>
+              <span class="icon">IG</span>
               <a href="https://instagram.com/kikobabiskomusic" target="_blank" rel="noopener">
                 @kikobabiskomusic
               </a>
@@ -88,13 +87,50 @@
       </div>
     </section>
 
-    <!-- Mobile-only override (logo smaller) -->
+    <!-- 🔥 MOBILE COMPACT MODE -->
     <style>
       @media (max-width: 520px) {
-        .brand-logo { max-width: 240px !important; }
-      }
-      @media (max-width: 420px) {
-        .brand-logo { max-width: 210px !important; }
+
+        /* Brand compacter */
+        .brand {
+          padding: 16px 16px 10px;
+        }
+
+        .brand-logo {
+          max-width: 180px !important;
+        }
+
+        /* Cards compacter */
+        .list {
+          padding: 10px 14px 20px;
+        }
+
+        .item {
+          padding: 14px 14px !important;
+          margin-bottom: 14px !important;
+        }
+
+        /* Kleinere tekst */
+        .name {
+          font-size: 20px !important;
+        }
+
+        .role {
+          font-size: 15px !important;
+        }
+
+        /* Logo in cards kleiner */
+        .logo {
+          width: 54px !important;
+          height: 54px !important;
+        }
+
+        /* Minder grote pijl */
+        .chev {
+          font-size: 18px !important;
+          opacity: .6;
+        }
+
       }
     </style>
 
