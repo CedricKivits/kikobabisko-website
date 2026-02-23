@@ -21,9 +21,10 @@
       <div style="padding: 10px 28px 40px;">
 
         <!-- Header -->
-        <div style="display:flex; align-items:center; gap:20px; margin-bottom:26px;">
+        <div class="ckz-head" style="display:flex; align-items:center; gap:20px; margin-bottom:26px;">
           
           <img 
+            class="ckz-logo"
             src="assets/ceddy-keyz.png"
             alt="Ceddy Keyz logo"
             style="width:90px; height:90px; object-fit:cover; border-radius:14px;
@@ -32,8 +33,8 @@
           />
 
           <div>
-            <h1 style="margin:0; font-size:44px;">Ceddy Keyz</h1>
-            <p style="margin:6px 0 0; color:rgba(245,166,35,.95); font-weight:900; font-size:22px;">
+            <h1 class="ckz-title" style="margin:0; font-size:44px;">Ceddy Keyz</h1>
+            <p class="ckz-sub" style="margin:6px 0 0; color:rgba(245,166,35,.95); font-weight:900; font-size:22px;">
               Jazz piano & Covers
             </p>
           </div>
@@ -76,7 +77,7 @@
 
           <!-- LIVE COVERS COLUMN -->
           <div>
-            <h2 class="section-title" style="color:#ffffff; margin-bottom:18px;"; margin-bottom:18px;">
+            <h2 class="section-title" style="color:#ffffff; margin-bottom:18px;">
               Live Covers
             </h2>
 
@@ -95,15 +96,61 @@
 
         </div>
 
-      </div>
-      </div>
         <h2 style="margin:22px 0 10px; font-size:26px;">Socials</h2>
         <ul style="margin:0; padding-left:18px; color:rgba(255,255,255,.78); line-height:1.8;">
           <li><a style="color:rgba(245,166,35,.95); font-weight:900;" href="https://www.youtube.com/@CeddyKeyzMusic" target="_blank" rel="noopener">YouTube</a></li>
           <li><a style="color:rgba(245,166,35,.95); font-weight:900;" href="https://www.instagram.com/ceddykeyz/" target="_blank" rel="noopener">Instagram</a></li>
         </ul>
+
       </div>
     </section>
+
+    <!-- ✅ Mobile-only fixes (desktop unchanged) -->
+    <style>
+      @media (max-width: 520px) {
+
+        /* Compact padding */
+        .card > div[style*="padding:28px 28px 10px;"] { 
+          padding: 18px 16px 8px !important; 
+        }
+
+        .card > div[style*="padding: 10px 28px 40px;"] { 
+          padding: 10px 16px 22px !important; 
+        }
+
+        /* Stack header */
+        .ckz-head { 
+          flex-direction: column !important; 
+          align-items: flex-start !important; 
+          gap: 14px !important;
+          margin-bottom: 18px !important;
+        }
+
+        .ckz-logo { 
+          width: 72px !important; 
+          height: 72px !important; 
+          border-radius: 14px !important;
+        }
+
+        .ckz-title { 
+          font-size: 34px !important; 
+          line-height: 1.05 !important; 
+        }
+
+        .ckz-sub { 
+          font-size: 17px !important; 
+          line-height: 1.25 !important;
+          margin-top: 8px !important;
+        }
+
+        /* Reduce the playlist grid spacing a bit on mobile */
+        div[style*="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));"]{
+          gap: 22px !important;
+          margin-top: 28px !important;
+        }
+      }
+    </style>
+
   </main>
 </body>
 </html>
