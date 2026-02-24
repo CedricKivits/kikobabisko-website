@@ -42,7 +42,6 @@
 
         <div style="height:1px; background:rgba(255,255,255,.10); margin:28px 0;"></div>
 
-        <!-- Intro -->
         <p style="color:rgba(255,255,255,.75); max-width:720px; line-height:1.6;">
           Live jazz standards and piano covers performed in an intimate,
           expressive style. Available for live events, restaurants and private bookings.
@@ -56,46 +55,50 @@
           margin-top:50px;
         ">
 
-          <!-- JAZZ PIANO COLUMN -->
+          <!-- JAZZ -->
           <div>
             <h2 class="section-title" style="color:#ffffff; margin-bottom:18px;">
               Jazz Piano
             </h2>
 
-            <div class="video-card">
-              <iframe 
-                src="https://www.youtube.com/embed/videoseries?list=JAZZ_PLAYLIST_ID"
-                title="Jazz Piano Playlist"
-                allowfullscreen>
-              </iframe>
-              <div class="video-info">
-                <p class="video-title">Full Jazz Piano Playlist</p>
-                <p class="video-meta">All performances</p>
-              </div>
-            </div>
+            <select id="jazzSelect" class="video-select">
+              <option value="">— Kies een jazz standard —</option>
+              <option value="xr_6ha8ZlIE&list=PLq9H2Tixa9wVrplF2o1O2K-bwuudUHSwg&index=1">Autumn Leaves (test)</option>
+              <option value="VIDEO_ID_2">Misty</option>
+              <option value="VIDEO_ID_3">All The Things You Are</option>
+            </select>
           </div>
 
-          <!-- LIVE COVERS COLUMN -->
+          <!-- COVERS -->
           <div>
             <h2 class="section-title" style="color:#ffffff; margin-bottom:18px;">
               Live Covers
             </h2>
 
-            <div class="video-card">
-              <iframe 
-                src="https://www.youtube.com/embed/videoseries?list=COVERS_PLAYLIST_ID"
-                title="Covers Playlist"
-                allowfullscreen>
-              </iframe>
-              <div class="video-info">
-                <p class="video-title">Full Covers Playlist</p>
-                <p class="video-meta">All live covers</p>
-              </div>
-            </div>
+            <select id="coversSelect" class="video-select">
+              <option value="">— Kies een cover —</option>
+              <option value="VIDEO_ID_4">Cover Song 1</option>
+              <option value="VIDEO_ID_5">Cover Song 2</option>
+            </select>
           </div>
 
         </div>
 
+        <!-- SHARED PLAYER -->
+        <div class="video-card" style="margin:40px auto 0; max-width:820px;">
+          <iframe 
+            id="mainPlayer"
+            src=""
+            title="Ceddy Keyz Video Player"
+            allowfullscreen>
+          </iframe>
+          <div class="video-info">
+            <p class="video-title" id="videoTitle">Selecteer een nummer hierboven</p>
+            <p class="video-meta" id="videoMeta">Ceddy Keyz performance</p>
+          </div>
+        </div>
+
+        <!-- Socials -->
         <h2 style="margin:22px 0 10px; font-size:26px;">Socials</h2>
         <ul style="margin:0; padding-left:18px; color:rgba(255,255,255,.78); line-height:1.8;">
           <li><a style="color:rgba(245,166,35,.95); font-weight:900;" href="https://www.youtube.com/@CeddyKeyzMusic" target="_blank" rel="noopener">YouTube</a></li>
@@ -105,51 +108,84 @@
       </div>
     </section>
 
-    <!-- ✅ Mobile-only fixes (desktop unchanged) -->
+    <!-- STYLE -->
     <style>
-      @media (max-width: 520px) {
+      .video-select{
+        width:100%;
+        padding:12px 14px;
+        border-radius:12px;
+        border:1px solid rgba(255,255,255,.12);
+        background: rgba(0,0,0,.25);
+        color:#fff;
+        font-weight:800;
+        cursor:pointer;
+      }
 
-        /* Compact padding */
-        .card > div[style*="padding:28px 28px 10px;"] { 
-          padding: 18px 16px 8px !important; 
-        }
+      .video-card{
+        border-radius: 16px;
+        border: 1px solid rgba(255,255,255,.10);
+        background: rgba(0,0,0,.22);
+        overflow:hidden;
+        box-shadow: 0 20px 60px rgba(0,0,0,.45);
+      }
 
-        .card > div[style*="padding: 10px 28px 40px;"] { 
-          padding: 10px 16px 22px !important; 
-        }
+      .video-card iframe{
+        width:100%;
+        height:460px;
+        display:block;
+        border:0;
+      }
 
-        /* Stack header */
-        .ckz-head { 
-          flex-direction: column !important; 
-          align-items: flex-start !important; 
-          gap: 14px !important;
-          margin-bottom: 18px !important;
-        }
+      .video-info{
+        padding: 12px;
+      }
 
-        .ckz-logo { 
-          width: 72px !important; 
-          height: 72px !important; 
-          border-radius: 14px !important;
-        }
+      .video-title{
+        margin:0 0 6px;
+        font-weight:900;
+      }
 
-        .ckz-title { 
-          font-size: 34px !important; 
-          line-height: 1.05 !important; 
-        }
+      .video-meta{
+        margin:0;
+        color:rgba(255,255,255,.70);
+      }
 
-        .ckz-sub { 
-          font-size: 17px !important; 
-          line-height: 1.25 !important;
-          margin-top: 8px !important;
-        }
-
-        /* Reduce the playlist grid spacing a bit on mobile */
-        div[style*="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));"]{
-          gap: 22px !important;
-          margin-top: 28px !important;
+      @media (max-width:520px){
+        .video-card iframe{
+          height:240px;
         }
       }
     </style>
+
+    <!-- SCRIPT -->
+    <script>
+      const jazzSelect = document.getElementById("jazzSelect");
+      const coversSelect = document.getElementById("coversSelect");
+      const player = document.getElementById("mainPlayer");
+      const title = document.getElementById("videoTitle");
+      const meta  = document.getElementById("videoMeta");
+
+      function loadVideo(selectElement, otherSelect, metaText) {
+        const videoId = selectElement.value;
+        if (!videoId) return;
+
+        const videoTitle = selectElement.options[selectElement.selectedIndex].text;
+
+        player.src = "https://www.youtube.com/embed/" + videoId;
+        title.textContent = videoTitle;
+        meta.textContent = metaText;
+
+        otherSelect.selectedIndex = 0;
+      }
+
+      jazzSelect.addEventListener("change", () => {
+        loadVideo(jazzSelect, coversSelect, "Live jazz piano");
+      });
+
+      coversSelect.addEventListener("change", () => {
+        loadVideo(coversSelect, jazzSelect, "Live piano cover");
+      });
+    </script>
 
   </main>
 </body>
