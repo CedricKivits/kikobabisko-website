@@ -45,53 +45,60 @@
         <div style="height:1px; background:rgba(255,255,255,.10); margin:18px 0 22px;"></div>
 
         <h2 class="section-title">Albums</h2>
-        <p class="section-note">Click on an album to listen.</p>
+        <p class="section-note">Tap an album to choose Spotify or YouTube.</p>
 
         <div class="albums">
-          <!-- Album card 1 -->
-          <a class="album" href="#" target="_blank" rel="noopener">
-            <div class="album-cover">
-              <img src="assets/bloom-album-cover.png" alt="Album title cover">
-            </div>
-            <div class="album-body">
-              <p class="album-title">Bloom</p>
-              <p class="album-meta">2026 • Album</p>
-              <div class="album-tags">
-                <span class="tag">Spotify</span>
-                <span class="tag">Youtube</span>
+
+          <!-- Album chooser card (details/summary) -->
+          <details class="album album-choice">
+            <summary class="album-summary">
+              <div class="album-cover">
+                <img src="assets/bloom-album-cover.png" alt="Bloom cover">
               </div>
+              <div class="album-body">
+                <p class="album-title">Bloom</p>
+                <p class="album-meta">2026 • Album</p>
+                <div class="album-tags">
+                  <span class="tag">Songwriter</span>
+                  <span class="tag">Acoustic</span>
+                </div>
+              </div>
+            </summary>
+
+            <div class="album-actions">
+              <a class="album-btn" href="#" target="_blank" rel="noopener">Spotify</a>
+              <a class="album-btn" href="#" target="_blank" rel="noopener">YouTube</a>
             </div>
-          </a>
+
+            <div class="album-actions-hint">
+              Tap the album again to close
+            </div>
+          </details>
 
           <!-- Album card 2 -->
-          <!-- <a class="album" href="#" target="_blank" rel="noopener">
-            <div class="album-cover">
-              <span style="color:rgba(255,255,255,.55); font-weight:900;">Cover</span>
-            </div>
-            <div class="album-body">
-              <p class="album-title">Album Title 2</p>
-              <p class="album-meta">2025 • EP</p>
-              <div class="album-tags">
-                <span class="tag">Indie</span>
-                <span class="tag">Piano</span>
+          <!--
+          <details class="album album-choice">
+            <summary class="album-summary">
+              <div class="album-cover">
+                <img src="assets/ALBUM_COVER.png" alt="Album cover">
               </div>
+              <div class="album-body">
+                <p class="album-title">Album Title 2</p>
+                <p class="album-meta">2025 • EP</p>
+                <div class="album-tags">
+                  <span class="tag">Spotify</span>
+                  <span class="tag">YouTube</span>
+                </div>
+              </div>
+            </summary>
+            <div class="album-actions">
+              <a class="album-btn" href="#" target="_blank" rel="noopener">Spotify</a>
+              <a class="album-btn" href="#" target="_blank" rel="noopener">YouTube</a>
             </div>
-          </a> -->
+            <div class="album-actions-hint">Tap the album again to close</div>
+          </details>
+          -->
 
-          <!-- Album card 3 -->
-          <!-- <a class="album" href="#" target="_blank" rel="noopener">
-            <div class="album-cover">
-              <span style="color:rgba(255,255,255,.55); font-weight:900;">Cover</span>
-            </div>
-            <div class="album-body">
-              <p class="album-title">Album Title 3</p>
-              <p class="album-meta">2024 • Single</p>
-              <div class="album-tags">
-                <span class="tag">Live</span>
-                <span class="tag">Demo</span>
-              </div>
-            </div>
-          </a> -->
         </div>
 
         <h2 style="margin:22px 0 10px; font-size:26px;">Socials</h2>

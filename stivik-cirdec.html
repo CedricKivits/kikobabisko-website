@@ -45,23 +45,35 @@
         <div style="height:1px; background:rgba(255,255,255,.10); margin:18px 0 22px;"></div>
 
         <h2 class="section-title">Albums</h2>
-        <p class="section-note">Click on an album to listen.</p>
+        <p class="section-note">Tap an album to choose Spotify or YouTube.</p>
 
         <div class="albums">
 
-          <a class="album" href="#" target="_blank" rel="noopener">
-            <div class="album-cover">
-              <img src="assets/the-first-quest.png" alt="The First Quest cover">
-            </div>
-            <div class="album-body">
-              <p class="album-title">The First Quest</p>
-              <p class="album-meta">2026 • Album</p>
-              <div class="album-tags">
-                <span class="tag">Soundtrack</span>
-                <span class="tag">Orchestral</span>
+          <!-- Album chooser card (stable, no flip) -->
+          <details class="album album-choice">
+            <summary class="album-summary">
+              <div class="album-cover">
+                <img src="assets/the-first-quest.png" alt="The First Quest cover">
               </div>
+              <div class="album-body">
+                <p class="album-title">The First Quest</p>
+                <p class="album-meta">2026 • Album</p>
+                <div class="album-tags">
+                  <span class="tag">Soundtrack</span>
+                  <span class="tag">Orchestral</span>
+                </div>
+              </div>
+            </summary>
+
+            <div class="album-actions">
+              <a class="album-btn" href="https://open.spotify.com/album/0CKizbgbunEhicIaLWfS4Q?si=BAoZaTW6TdmIyzq_CXJP1Q" target="_blank" rel="noopener">Spotify</a>
+              <a class="album-btn" href="YOUTUBE_ALBUM_LINK" target="_blank" rel="noopener">YouTube</a>
             </div>
-          </a>
+
+            <div class="album-actions-hint">
+              Tap the album again to close
+            </div>
+          </details>
 
         </div>
 

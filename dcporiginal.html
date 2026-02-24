@@ -46,38 +46,62 @@
 
         <!-- Albums -->
         <h2 class="section-title">Albums</h2>
-        <p class="section-note">Click on an album to listen.</p>
+        <p class="section-note">Tap an album to choose Spotify or YouTube.</p>
 
         <div class="albums">
-          <!-- Album card 1 -->
-          <a class="album" href="#" target="_blank" rel="noopener">
-            <div class="album-cover">
-              <img src="assets/dcporiginal.png" alt="Album title cover">
-            </div>
-            <div class="album-body">
-              <p class="album-title">Beat Tape 1</p>
-              <p class="album-meta">2026 • Album</p>
-              <div class="album-tags">
-                <span class="tag">Spotify</span>
-                <span class="tag">Youtube</span>
-              </div>
-            </div>
-          </a>
 
-          <!-- Album card 2 -->
-          <a class="album" href="#" target="_blank" rel="noopener">
-            <div class="album-cover">
-              <img src="assets/dcporiginal2.png" alt="Album title cover">
-            </div>
-            <div class="album-body">
-              <p class="album-title">Beat Tape 2</p>
-              <p class="album-meta">2026 • Album</p>
-              <div class="album-tags">
-                <span class="tag">Spotify</span>
-                <span class="tag">Youtube</span>
+          <!-- Album chooser 1 -->
+          <details class="album album-choice">
+            <summary class="album-summary">
+              <div class="album-cover">
+                <img src="assets/dcporiginal.png" alt="Beat Tape 1 cover">
               </div>
+              <div class="album-body">
+                <p class="album-title">Beat Tape 1</p>
+                <p class="album-meta">2026 • Album</p>
+                <div class="album-tags">
+                  <span class="tag">Hip-Hop</span>
+                  <span class="tag">Alternative</span>
+                </div>
+              </div>
+            </summary>
+
+            <div class="album-actions">
+              <a class="album-btn" href="#" target="_blank" rel="noopener">Spotify</a>
+              <a class="album-btn" href="#" target="_blank" rel="noopener">YouTube</a>
             </div>
-          </a>
+
+            <div class="album-actions-hint">
+              Tap the album again to close
+            </div>
+          </details>
+
+          <!-- Album chooser 2 -->
+          <details class="album album-choice">
+            <summary class="album-summary">
+              <div class="album-cover">
+                <img src="assets/dcporiginal2.png" alt="Beat Tape 2 cover">
+              </div>
+              <div class="album-body">
+                <p class="album-title">Beat Tape 2</p>
+                <p class="album-meta">2026 • Album</p>
+                <div class="album-tags">
+                  <span class="tag">Hip-Hop</span>
+                  <span class="tag">Alternative</span>
+                </div>
+              </div>
+            </summary>
+
+            <div class="album-actions">
+              <a class="album-btn" href="#" target="_blank" rel="noopener">Spotify</a>
+              <a class="album-btn" href="#" target="_blank" rel="noopener">YouTube</a>
+            </div>
+
+            <div class="album-actions-hint">
+              Tap the album again to close
+            </div>
+          </details>
+
         </div>
 
         <!-- Socials -->
