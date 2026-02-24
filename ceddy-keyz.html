@@ -180,6 +180,34 @@
 
       /* Mobile: hide iframe player, show play buttons */
       @media (max-width:520px){
+        /* ✅ FIX: stop horizontal overflow / “uitlopen” */
+        html, body{
+          overflow-x: hidden !important;
+        }
+        .page, .card{
+          max-width: 100% !important;
+        }
+
+        /* ✅ FIX: your inline grid min width (400px) can overflow on small screens */
+        div[style*="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));"]{
+          grid-template-columns: 1fr !important;
+          gap: 22px !important;
+          margin-top: 28px !important;
+        }
+
+        /* ✅ FIX: long headings shouldn’t push width */
+        h2.section-title{
+          overflow-wrap: anywhere;
+          word-break: break-word;
+          max-width: 100%;
+        }
+
+        /* keep form controls inside the card */
+        .video-select,
+        .mobile-play-btn{
+          max-width: 100%;
+        }
+
         .desktop-player{
           display:none !important;
         }
@@ -210,7 +238,6 @@
           return;
         }
         btn.classList.remove("is-disabled");
-        // YouTube short link: best mobile UX (app or browser)
         btn.href = "https://youtu.be/" + videoId;
       }
 
@@ -230,44 +257,37 @@
       function onJazzChange(){
         const id = jazzSelect.value;
 
-        // update mobile play button link
         setBtnState(jazzPlayBtn, id);
-        // reset other dropdown for clarity
         if (id) coversSelect.selectedIndex = 0;
 
         if (!isMobile){
           loadVideoDesktop(jazzSelect, coversSelect, "Live jazz piano");
         } else {
-          // optional: update texts even on mobile
           if (id){
             title.textContent = jazzSelect.options[jazzSelect.selectedIndex].text;
             meta.textContent = "Live jazz piano";
           }
-          setBtnState(coversPlayBtn, ""); // disable other button when jazz picked
+          setBtnState(coversPlayBtn, "");
         }
       }
 
       function onCoversChange(){
         const id = coversSelect.value;
 
-        // update mobile play button link
         setBtnState(coversPlayBtn, id);
-        // reset other dropdown for clarity
         if (id) jazzSelect.selectedIndex = 0;
 
         if (!isMobile){
           loadVideoDesktop(coversSelect, jazzSelect, "Live piano cover");
         } else {
-          // optional: update texts even on mobile
           if (id){
             title.textContent = coversSelect.options[coversSelect.selectedIndex].text;
             meta.textContent = "Live piano cover";
           }
-          setBtnState(jazzPlayBtn, ""); // disable other button when cover picked
+          setBtnState(jazzPlayBtn, "");
         }
       }
 
-      // Init buttons disabled
       setBtnState(jazzPlayBtn, "");
       setBtnState(coversPlayBtn, "");
 
